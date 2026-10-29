@@ -427,7 +427,7 @@
       .history-search:focus { border-color: var(--gold-bright); }
       .history-search::placeholder { color: #7e96b8; }
 
-      /* ---------- Alt views (tasks / roadmap) ---------- */
+      /* ---------- Alt views (tasks) ---------- */
       .alt-view { flex: 1; overflow-y: auto; display: none; min-height: 0; }
       .alt-view.show { display: block; }
       .alt-inner { max-width: 880px; margin: 0 auto; padding: 28px 20px 46px; }
@@ -478,7 +478,6 @@
       }
       .honest-box h2 { font-family: "Sora", sans-serif; font-size: 1.02rem; margin: 0 0 6px; color: var(--gold-bright); }
       .honest-box p { margin: 0; color: var(--ink); font-size: .9rem; line-height: 1.65; }
-      .roadmap-h { font-family: "Sora", sans-serif; font-size: 1.2rem; margin: 26px 0 12px; }
 
       /* ---------- Welcome actions / misc ---------- */
       .welcome-actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 20px; }
@@ -582,10 +581,6 @@
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4.5 13.5H11L9.5 22 19 10h-6.5L13 2Z"/></svg>
           Agent Tasks
         </button>
-        <button class="side-nav-btn" id="navRoadmap">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="2.4"/><circle cx="18" cy="5" r="2.4"/><path d="M8 17.5 15.5 7"/></svg>
-          Launch Roadmap
-        </button>
 
         <input class="history-search" id="historySearch" type="search" placeholder="Search chats…" aria-label="Search your chats" />
 
@@ -614,10 +609,6 @@
           <button class="tb-btn" id="tbTasks" title="Agent Tasks">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4.5 13.5H11L9.5 22 19 10h-6.5L13 2Z"/></svg>
             <span class="lbl">Tasks</span>
-          </button>
-          <button class="tb-btn" id="tbRoadmap" title="Launch Roadmap">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="2.4"/><circle cx="18" cy="5" r="2.4"/><path d="M8 17.5 15.5 7"/></svg>
-            <span class="lbl">Roadmap</span>
           </button>
           <button class="icon-btn" id="downloadBtn" aria-label="Download this chat" title="Download this chat (.md)">
             <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M6.5 10 12 15.5 17.5 10M4 20h16"/></svg>
@@ -663,62 +654,6 @@
             <p class="alt-lead">One tap loads a complete, ready-made instruction into the chat — the same idea as the morning-planner and specialist agents on big agent platforms. Fill in the [brackets], press send, and Loona AI does the work.</p>
             <div class="tool-grid" id="toolGrid"></div>
             <p class="alt-note">Every task runs on the same Loona Engine as the chat, in your language — English, Urdu or Roman Urdu. Nothing is sent anywhere except the engine that answers you.</p>
-          </div>
-        </section>
-
-        <!-- ============ LAUNCH ROADMAP VIEW ============ -->
-        <section class="alt-view" id="roadmapView" aria-label="Loona AI launch roadmap">
-          <div class="alt-inner">
-            <h1>The road to a <span class="gold">full agent launch</span></h1>
-            <p class="alt-lead">Platforms like AgentR (describe it — it builds the software) and AgentH (an agent with its own browser that does your work) did not appear in one day. Here is Loona AI's honest path from this free public version to that level — phase by phase, with exactly what each step needs.</p>
-
-            <div class="phase">
-              <div class="phase-head"><h2>Phase 1 — Public AI assistant</h2><span class="pill live">Live now</span></div>
-              <p>Loona AI is already a working public assistant on the free Loona Engine (Make + Gemini) — the same engine behind Loona AI Notes and Loona Bolti Kitab.</p>
-              <ul>
-                <li><b>Chat on any topic</b> — questions, writing, study help, code — in English, Urdu and Roman Urdu</li>
-                <li><b>Photo understanding</b> — attach a photo and ask about it</li>
-                <li><b>Voice both ways</b> — speak your question, listen to any answer</li>
-                <li><b>Agent Tasks</b> — ready-made one-tap jobs: planner, content pack, research report, website brief and more</li>
-                <li><b>Installable</b> — add it to a phone home screen like an app</li>
-              </ul>
-            </div>
-
-            <div class="phase">
-              <div class="phase-head"><h2>Phase 2 — An agent that does work</h2><span class="pill next">Next</span></div>
-              <p>The jump from "answers questions" to "gets work done" — built on the tools Loona Automation already runs: Make scenarios, connected accounts and scheduled checks.</p>
-              <ul>
-                <li><b>Connectors</b> — Loona AI linked to Gmail, Facebook Pages and Google Sheets through Make, so a chat can file a lead, draft a post or update a sheet</li>
-                <li><b>Scheduled agents</b> — a Morning Planner, a daily business report and an inbox watch that run on their own every day</li>
-                <li><b>A bigger task library</b> — more ready-made agents for teachers, shops and freelancers</li>
-                <li><b>Still free to run</b> — this phase fits inside free tiers while usage is small</li>
-              </ul>
-            </div>
-
-            <div class="phase">
-              <div class="phase-head"><h2>Phase 3 — Full platform launch</h2><span class="pill later">Needs paid setup</span></div>
-              <p>The AgentR / AgentH level: a product strangers sign up for and pay for. This phase is real work and real cost — it starts when the first paying clients arrive, not before.</p>
-              <ul>
-                <li><b>User accounts</b> — sign-up and login, so every user has their own private workspace</li>
-                <li><b>Its own browser</b> — an agent that opens websites, clicks and types for each user (AgentH's core feature)</li>
-                <li><b>Paid engine capacity</b> — AI credits and servers that hold up when hundreds of people use it at once</li>
-                <li><b>Custom domain + payments</b> — Loona AI on its own address, with subscriptions paid online</li>
-              </ul>
-            </div>
-
-            <h2 class="roadmap-h">What the owner needs to do to launch</h2>
-            <ul class="steps">
-              <li><b>Publish this site free</b> — put the Loona AI export on GitHub Pages (a new repo, e.g. “Loona-AI”), exactly like Autopilot and the Calling Agent were published, and share the link everywhere.</li>
-              <li><b>Use it daily and collect feedback</b> — real users, real questions; keep the Loona Engine scenario switched ON in Make so answers keep flowing.</li>
-              <li><b>Offer “AI agent setup” as a service</b> — businesses pay for a Loona-AI-style assistant wired to their own pages and sheets; that income funds Phase 3.</li>
-              <li><b>Buy a custom domain when ready</b> — a yearly cost; point it at the same site so Loona AI gets its own address.</li>
-              <li><b>Go paid only when income allows</b> — a small server, paid AI credits, then accounts and per-user browsers (Phase 3), in that order.</li>
-            </ul>
-
-            <div class="honest-box">
-              <h2>The honest part</h2>
-              <p>Today Loona AI cannot control a browser, log in to your accounts, or remember you between devices — and the free engine has a monthly limit, shared by all Loona sites. AgentH gives every user a private virtual computer; that cannot run on free hosting, for anyone. What you see here is the real Phase 1, working now — and the phases above are the genuine road, with no step hidden.</p>
-            </div>
           </div>
         </section>
 
@@ -1022,7 +957,6 @@
           '<div class="can-grid">' + grid + '</div>' +
           '<div class="welcome-actions">' +
           '<button class="wa-btn" data-go="tasks" type="button">Browse Agent Tasks</button>' +
-          '<button class="wa-btn ghost" data-go="roadmap" type="button">See the Launch Roadmap</button>' +
           '</div>' +
           '</div>';
       }
@@ -1517,26 +1451,20 @@
         toastTimer = setTimeout(function () { t.classList.remove("show"); }, 2200);
       }
 
-      /* ---------------- views (chat / tasks / roadmap) ---------------- */
+      /* ---------------- views (chat / tasks) ---------------- */
       var currentView = "chat";
       function showView(name) {
         currentView = name;
         $("stage").style.display = name === "chat" ? "flex" : "none";
         $("composerZone").style.display = name === "chat" ? "" : "none";
         $("tasksView").classList.toggle("show", name === "tasks");
-        $("roadmapView").classList.toggle("show", name === "roadmap");
         $("tbTasks").classList.toggle("active", name === "tasks");
-        $("tbRoadmap").classList.toggle("active", name === "roadmap");
         $("navTasks").classList.toggle("active", name === "tasks");
-        $("navRoadmap").classList.toggle("active", name === "roadmap");
         if (name === "tasks") $("tasksView").scrollTop = 0;
-        if (name === "roadmap") $("roadmapView").scrollTop = 0;
         closeSidebarMobile();
       }
       $("tbTasks").addEventListener("click", function () { showView(currentView === "tasks" ? "chat" : "tasks"); });
-      $("tbRoadmap").addEventListener("click", function () { showView(currentView === "roadmap" ? "chat" : "roadmap"); });
       $("navTasks").addEventListener("click", function () { showView("tasks"); });
-      $("navRoadmap").addEventListener("click", function () { showView("roadmap"); });
 
       /* ---------------- agent tasks ---------------- */
       var TASKS = [
@@ -1621,7 +1549,7 @@
       });
 
       /* ---------------- site guide (curated Q&A) ---------------- */
-      var GUIDE_CHIPS = ["What can you do?", "Agent Tasks", "Is it free?", "Attach a photo", "Launch roadmap", "Who created you?"];
+      var GUIDE_CHIPS = ["What can you do?", "Agent Tasks", "Is it free?", "Attach a photo", "Who created you?"];
       var GUIDE_QA = [
         { keys: ["what can you do", "abilities", "features", "help me", "options", "kya kar sak"],
           a: "Loona AI can:\n• Answer questions on any topic\n• Write emails, essays, posts, stories and CVs\n• Explain any topic simply, step by step\n• Look at a photo and explain it\n• Translate between English, Urdu and Roman Urdu\n• Plan lessons, days, businesses and trips\n• Write and fix code\nTap Agent Tasks for ready-made jobs that do the asking for you." },
@@ -1637,12 +1565,10 @@
           a: "Loona AI replies in YOUR language. Write in English, Urdu script or Roman Urdu — the answer comes back in the same language, automatically." },
         { keys: ["privacy", "private", "data", "saved", "history", "safe", "store"],
           a: "Your chats are saved only in this browser, on this device — never on a Loona server, because there is no account and no sign-up. Delete any chat from the sidebar, or Clear all. Your questions do travel to the Loona Engine (Make + Gemini) to get an answer, so don't paste passwords or private documents." },
-        { keys: ["roadmap", "launch", "agentr", "agenth", "future", "platform", "plan"],
-          a: "The Launch Roadmap (top bar or sidebar) shows the honest 3-phase plan:\nPhase 1 — public assistant: LIVE now.\nPhase 2 — an agent that does work: connectors to email, pages and sheets, plus scheduled daily agents.\nPhase 3 — a full AgentR/AgentH-class platform: user accounts, its own browser, paid capacity, custom domain — this one needs paid servers, so it starts when paying clients arrive." },
         { keys: ["who created", "creator", "made", "owner", "aurang", "loona automation", "contact", "hire", "book"],
           a: "Loona AI was created by Aurang Zeb Loona, founder of Loona Automation — the team behind Loona Autopilot (an AI office manager), Loona AI Notes for teachers and Loona Bolti Kitab, the book that speaks. To hire Loona Automation for an automation or your own AI assistant, reach out through the Fiverr profile @loonaautomation or by email — links and details are on the Loona Automation pages." },
         { keys: ["limit", "cannot", "can't do", "not working", "error", "browser", "login", "account"],
-          a: "Honest limits, for now:\n• No account or login — chats live on your device only.\n• Loona AI cannot browse the web or control other apps yet (that is Phase 3 on the roadmap).\n• The free engine has a monthly limit; if it is reached, or the engine is off, you will see a clear “try again” message — never a fake answer." },
+          a: "Honest limits, for now:\n• No account or login — chats live on your device only.\n• Loona AI cannot browse the web or control other apps yet (that is planned for a future phase).\n• The free engine has a monthly limit; if it is reached, or the engine is off, you will see a clear “try again” message — never a fake answer." },
         { keys: ["download", "save chat", "export", "stop", "regenerate", "edit"],
           a: "Useful buttons you may have missed:\n• Download (top bar) saves the whole chat as a file.\n• While an answer is being written, the send button becomes Stop.\n• Regenerate (under the last answer) asks for a fresh version.\n• Edit (under your message) changes it and asks again from there.\n• Copy and Listen sit under every answer." },
         { keys: ["install", "app", "phone", "home screen", "mobile"],
@@ -1682,7 +1608,7 @@
           });
           return;
         }
-        setGuideAnswer("I don't have a ready answer for that yet. I can help with: what Loona AI can do, Agent Tasks, photos, voice, languages, privacy, the launch roadmap, limits, and who created Loona AI. For everything else, just ask in the main chat!");
+        setGuideAnswer("I don't have a ready answer for that yet. I can help with: what Loona AI can do, Agent Tasks, photos, voice, languages, privacy, limits, and who created Loona AI. For everything else, just ask in the main chat!");
       }
       (function initGuide() {
         var chipsBox = $("guideChips");
